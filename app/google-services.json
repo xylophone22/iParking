@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "688524982889",
+    "firebase_url": "https://iparking-nsc.firebaseio.com",
+    "project_id": "iparking-nsc",
+    "storage_bucket": "iparking-nsc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688524982889:android:4c32d05a8c3b76f3",
+        "android_client_info": {
+          "package_name": "com.CAMT.NSC.iparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688524982889-6u5bvdt8repeen596ahdoahcj521ldvm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CAMT.NSC.iparking",
+            "certificate_hash": "4f644f0de60f1575f1b88c0d7a95a8edd2ad303b"
+          }
+        },
+        {
+          "client_id": "688524982889-gpv902n4r7vnt151rqce5qnlijjebfir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcifschL0uw_Gfq8n-zWxdffHeG52gHNo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688524982889-gpv902n4r7vnt151rqce5qnlijjebfir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
