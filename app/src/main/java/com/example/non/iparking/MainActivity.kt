@@ -29,6 +29,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
         }
 
-        login_createBtn.setOnClickListener { startActivity(Intent(this@MainActivity, RegisterActivity::class.java)) }
+        main_createBtn.setOnClickListener { startActivity(Intent(this@MainActivity, RegisterActivity::class.java)) }
     }
 }

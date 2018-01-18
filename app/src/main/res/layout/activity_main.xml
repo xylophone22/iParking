@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/main_appLogo" />
 
     <Button
-        android:id="@+id/login_createBtn"
+        android:id="@+id/main_createBtn"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
