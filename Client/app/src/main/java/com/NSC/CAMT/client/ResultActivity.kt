@@ -1,34 +1,16 @@
 package com.NSC.CAMT.client
 
-import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Bitmap
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
-import android.view.View
-import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
-import com.google.zxing.qrcode.encoder.QRCode
 import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.toast
 
 class ResultActivity : AppCompatActivity() {
-    //
-    private val tag = "QRCGEN"
-    private val REQUEST_PERMISSION = 0xf0
 
-    private var self: MainActivity? = null
-    private var snackbar: Snackbar? = null
-    private var qrImage: Bitmap? = null
-
-    private var txtQRText: EditText? = null
-    private var txtSaveHint: TextView? = null
-    private var btnGenerate: Button? = null, private var btnReset:Button? = null
-    private var imgResult: ImageView? = null
-    private var loader: ProgressBar? = null
-    //
     var mAuth: FirebaseAuth? = null
     var mAuthListener: FirebaseAuth.AuthStateListener? = null
     private val TAG: String = "Result Activity"
@@ -36,20 +18,7 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
-//
-        self = this
-
-        txtQRText = findViewById(R.id.txtQR) as EditText
-        txtSaveHint = findViewById(R.id.txtSaveHint) as TextView
-        btnGenerate = findViewById(R.id.btnGenerate) as Button
-        btnReset = findViewById(R.id.btnReset) as Button
-        imgResult = findViewById(R.id.imgResult) as ImageView
-        loader = findViewById(R.id.loader) as ProgressBar
-
-
-
-
-//
+        mAuth = FirebaseAuth.getInstance()
 
         val user = mAuth!!.currentUser
 
@@ -72,7 +41,8 @@ class ResultActivity : AppCompatActivity() {
             finish()
         }
 
-
+        btnGen.setOnClickListener { startActivity(Intent(this@ResultActivity, GenQRActivity::class.java)) }
+        btnReturn.setOnClickListener { startActivity(Intent(this@ResultActivity, ReturnActivity::class.java)) }
     }
 
     override fun onStart() {
@@ -93,5 +63,6 @@ class ResultActivity : AppCompatActivity() {
         }
         return super.onKeyDown(keyCode, event)
     }
+
 
 }

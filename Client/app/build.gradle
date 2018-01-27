@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.NSC.CAMT.client"
         minSdkVersion 15
@@ -36,6 +37,8 @@ dependencies {
     })
     compile 'com.github.kenglxn.QRGen:android:2.3.0'
 }
+
+
 
 
 apply plugin: 'com.google.gms.google-services'
