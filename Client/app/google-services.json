@@ -93,6 +93,94 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688524982889:android:d87be2d2bc0429a3",
+        "android_client_info": {
+          "package_name": "com.camt.nsc.iParking.staff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688524982889-npfu52eapt8cftolh622mfbnrjjvobrj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.camt.nsc.iParking.staff",
+            "certificate_hash": "4f644f0de60f1575f1b88c0d7a95a8edd2ad303b"
+          }
+        },
+        {
+          "client_id": "688524982889-gpv902n4r7vnt151rqce5qnlijjebfir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcifschL0uw_Gfq8n-zWxdffHeG52gHNo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688524982889-gpv902n4r7vnt151rqce5qnlijjebfir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688524982889:android:51850523765600de",
+        "android_client_info": {
+          "package_name": "com.camt.nsc.iParking.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688524982889-bkdh7qf7haaj2h994hqr69ccaqqjst7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.camt.nsc.iParking.client",
+            "certificate_hash": "4f644f0de60f1575f1b88c0d7a95a8edd2ad303b"
+          }
+        },
+        {
+          "client_id": "688524982889-gpv902n4r7vnt151rqce5qnlijjebfir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcifschL0uw_Gfq8n-zWxdffHeG52gHNo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688524982889-gpv902n4r7vnt151rqce5qnlijjebfir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

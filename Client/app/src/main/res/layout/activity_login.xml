@@ -4,34 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.NSC.CAMT.client.LoginActivity">
-    <ImageView
-        android:id="@+id/main_appLogo"
-        android:layout_width="385dp"
-        android:layout_height="158dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/firebase_auth" />
-
-    <ImageButton
-        android:id="@+id/login_backBtn"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="0dp"
-        android:backgroundTint="@android:color/transparent"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
-        tools:ignore="VectorDrawableCompat" />
-
+    tools:context="com.camt.nsc.iParking.client.LoginActivity">
     <EditText
-        android:id="@+id/login_emailEditText"
+        android:id="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -42,11 +17,10 @@
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_appLogo" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/login_passwordEditText"
+        android:id="@+id/et_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -58,10 +32,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_emailEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <Button
-        android:id="@+id/login_loginBtn"
+        android:id="@+id/btn_login"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -72,6 +46,5 @@
         android:text="Sign In"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_passwordEditText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 </android.support.constraint.ConstraintLayout>
