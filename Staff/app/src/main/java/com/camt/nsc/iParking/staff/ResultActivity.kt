@@ -110,7 +110,7 @@ class ResultActivity : AppCompatActivity() {
             if (data != null) {
                 val barcode: Barcode = data.getParcelableExtra("barcode")
                 txtResult.text = barcode.displayValue
-                txtResult.text
+                txtResult.text =  as String
             }
         }
     }
