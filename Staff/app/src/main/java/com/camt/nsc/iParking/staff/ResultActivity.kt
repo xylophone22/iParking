@@ -19,6 +19,13 @@ import com.google.firebase.database.*
 //-----------------------------------------------------//
 import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.toast
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.DatabaseReference
+import jdk.nashorn.internal.objects.NativeRegExp.source
+
+
+
+
 
 //-----------------------------------------------------//
 class ResultActivity : AppCompatActivity() {
@@ -36,6 +43,7 @@ class ResultActivity : AppCompatActivity() {
     private var tvLastName: TextView? = null
     private var tvEmail: TextView? = null
     private var tvUID: TextView? = null
+    private var tvStatus: TextView? = null
 
     private val TAG: String = "Result Activity"
 
@@ -56,9 +64,13 @@ class ResultActivity : AppCompatActivity() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, Array(1, { android.Manifest.permission.CAMERA }), PERMISSION_REQUEST)
 
+
         scanBtn.setOnClickListener {
             startActivityForResult(Intent(applicationContext, ScanActivity::class.java), REQUEST_CODE)
         }
+
+        updateInformation()
+
     }
 
     private fun initialise() {
@@ -69,6 +81,7 @@ class ResultActivity : AppCompatActivity() {
         tvLastName = findViewById<View>(R.id.tv_last_name) as TextView
         tvEmail = findViewById<View>(R.id.result_emailData) as TextView
         tvUID = findViewById<View>(R.id.result_uidData) as TextView
+        tvStatus = findViewById<View>(R.id.result_status) as TextView
 
     }
 
@@ -76,6 +89,7 @@ class ResultActivity : AppCompatActivity() {
         super.onStart()
         val mUser = mAuth!!.currentUser
         val mUserReference = mDatabaseReference!!.child(mUser!!.uid)
+
 
         tvEmail!!.text = mUser.email
         tvUID!!.text = mUser.uid
@@ -87,7 +101,6 @@ class ResultActivity : AppCompatActivity() {
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -97,20 +110,24 @@ class ResultActivity : AppCompatActivity() {
             if (data != null) {
                 val barcode: Barcode = data.getParcelableExtra("barcode")
                 txtResult.text = barcode.displayValue
-                txtResult.setOnClickListener { setClipboard(applicationContext, barcode.displayValue) }
+                txtResult.text
             }
         }
     }
 
-    private fun setClipboard(context: Context, text: String) {
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
-            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.text.ClipboardManager
-            clipboard.text = text
-        } else {
-            val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
-            val clip = android.content.ClipData.newPlainText("Copied Text", text)
-            clipboard.primaryClip = clip
-        }
-        Toast.makeText(context, "Copied Text", Toast.LENGTH_LONG).show()
+    private fun updateInformation(){
+
+        val mClient = FirebaseDatabase.getInstance().getReference("Users")
+        val dataClient = mClient.child(txtResult.text)
+
+        dataClient.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                tvStatus!!.text = snapshot.child("status").value as String
+            }
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+
+
     }
 }

@@ -100,6 +100,29 @@
         app:layout_constraintStart_toEndOf="@+id/result_uidLabel" />
 
     <TextView
+        android:id="@+id/showStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="Roboto"
+        android:text="Status:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_uidLabel" />
+
+    <TextView
+        android:id="@+id/result_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="GOGOGOGOGO"
+        app:layout_constraintBaseline_toBaselineOf="@+id/showStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/showStatus" />
+
+    <TextView
         android:id="@+id/txtResult"
         android:layout_width="match_parent"
         android:layout_height="35dp"
