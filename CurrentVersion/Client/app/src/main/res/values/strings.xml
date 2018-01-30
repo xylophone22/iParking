@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Client</string>
+    <string name="hint_enter_text_to_create_barcode">Ez</string>
+</resources>
