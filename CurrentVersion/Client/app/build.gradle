@@ -36,7 +36,4 @@ dependencies {
     compile 'com.github.kenglxn.QRGen:android:2.3.0'
 }
 
-
-
-
 apply plugin: 'com.google.gms.google-services'
