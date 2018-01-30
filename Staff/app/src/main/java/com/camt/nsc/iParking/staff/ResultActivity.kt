@@ -21,9 +21,6 @@ import kotlinx.android.synthetic.main.activity_result.*
 import org.jetbrains.anko.toast
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.DatabaseReference
-import jdk.nashorn.internal.objects.NativeRegExp.source
-
-
 
 
 
@@ -44,6 +41,9 @@ class ResultActivity : AppCompatActivity() {
     private var tvEmail: TextView? = null
     private var tvUID: TextView? = null
     private var tvStatus: TextView? = null
+
+    //Grobal variable
+    private var barCodeResult: String? = null
 
     private val TAG: String = "Result Activity"
 
@@ -110,15 +110,17 @@ class ResultActivity : AppCompatActivity() {
             if (data != null) {
                 val barcode: Barcode = data.getParcelableExtra("barcode")
                 txtResult.text = barcode.displayValue
-                txtResult.text =  as String
+
             }
         }
     }
 
     private fun updateInformation(){
 
+
+
         val mClient = FirebaseDatabase.getInstance().getReference("Users")
-        val dataClient = mClient.child(txtResult.text)
+        val dataClient = mClient.child("nQ7nMfKL2Fg7H0Vc0SqfaVhzVT93")
 
         dataClient.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
