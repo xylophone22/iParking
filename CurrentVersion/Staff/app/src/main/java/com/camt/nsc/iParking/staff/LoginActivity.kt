@@ -31,6 +31,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         initialise()
+
+        if (mAuth!!.currentUser != null) {
+            startActivity(Intent(this@LoginActivity, ResultActivity::class.java))
+            finish()
+        }
     }
     private fun initialise() {
         tranEmail = findViewById<View>(R.id.loginEmail) as EditText
