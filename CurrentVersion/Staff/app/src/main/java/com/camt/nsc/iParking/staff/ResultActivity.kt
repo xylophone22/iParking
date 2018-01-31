@@ -37,6 +37,8 @@ class ResultActivity : AppCompatActivity() {
     private var sendStatusBtn: Button? = null
 
     private var status: String? = null
+    private var qrcodeDataResult:String = "lB3y1YjRT3SuecnYRbwvNITacKh2"
+
     private val TAG: String = "Result Activity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,26 +96,28 @@ class ResultActivity : AppCompatActivity() {
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             if (data != null) {
                 val barcode: Barcode = data.getParcelableExtra("barcode")
-                txtResult.text = barcode.displayValue
+                txtResult.text = barcode.rawValue
+                    this.qrcodeDataResult = txtResult.text.toString()
             }
         }
     }
 
     private fun updateInformation(){
-        val mClient = FirebaseDatabase.getInstance().getReference("Users")
-        val dataClient = mClient.child("LdbtCAxCLgdupOqshl4Lzb7jCHg1")
-        dataClient.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                showStatus!!.text = snapshot.child("status").value as String
-            }
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })
+            val mClient = FirebaseDatabase.getInstance().getReference("Users")
+            val dataClient = mClient.child(this.qrcodeDataResult)
+            dataClient.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    showStatus!!.text = snapshot.child("status").value as String
+                }
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
+
     }
 
     private fun updateStatus(){
-        status = sendStatus?.text.toString()
-        val mStatus = FirebaseDatabase.getInstance().getReference("Users")
-        val condition = mStatus.child("LdbtCAxCLgdupOqshl4Lzb7jCHg1")
-        condition.child("status").setValue(status)
+            status = sendStatus?.text.toString()
+            val mStatus = FirebaseDatabase.getInstance().getReference("Users")
+            val condition = mStatus.child(this.qrcodeDataResult)
+            condition.child("status").setValue(status)
     }
 }

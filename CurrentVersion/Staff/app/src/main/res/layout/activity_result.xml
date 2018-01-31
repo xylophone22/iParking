@@ -23,6 +23,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="Roboto"
             android:text="Staff mode"
+            android:textAlignment="center"
             android:textSize="30dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent" />
