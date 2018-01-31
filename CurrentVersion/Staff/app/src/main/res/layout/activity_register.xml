@@ -15,30 +15,46 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/registerFirstName"
-        android:hint="Firstname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:fontFamily="Roboto"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        <ImageView
+            android:id="@+id/main_appLogo"
+            android:layout_width="385dp"
+            android:layout_height="158dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="45dp"
+            android:layout_gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/iparkinglogo" />
+
+        <EditText
+            android:id="@+id/registerFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:fontFamily="Roboto"
+            android:hint="Firstname"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/registerLastName"
-        android:hint="Lastname"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:fontFamily="Roboto"
+        android:hint="Lastname"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +62,7 @@
 
     <EditText
         android:id="@+id/registerEmail"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -61,7 +77,7 @@
 
     <EditText
         android:id="@+id/registerPassword"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -76,7 +92,7 @@
 
     <EditText
         android:id="@+id/registerTelephone"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -91,12 +107,11 @@
     <EditText
         android:id="@+id/registerIdentificationcard"
         android:hint="Identification card"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
+        android:layout_marginTop="16dp"
         android:fontFamily="Roboto"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +121,7 @@
     <Button
         android:id="@+id/registerBtn"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -120,11 +135,12 @@
     <Button
         android:id="@+id/registerSigninBtn"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="Roboto"
         android:text="Sign in"
         android:textColor="#A7A7A7"
