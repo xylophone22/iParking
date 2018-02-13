@@ -105,6 +105,7 @@ class ResultActivity : AppCompatActivity() {
     private fun updateInformation(){
             val mClient = FirebaseDatabase.getInstance().getReference("Users")
             val dataClient = mClient.child(this.qrcodeDataResult)
+
             dataClient.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     showStatus!!.text = snapshot.child("status").value as String
